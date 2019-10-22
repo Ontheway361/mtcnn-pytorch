@@ -32,7 +32,7 @@ def eval_net(args, net, eval_data):
 
     net.eval()
     st_acc, st_cls, st_det, st_lmk, st_all = 0, 0, 0, 0, 0
-    lossfn, batch_idx = LossFn(), 1
+    lossfn, batch_idx = LossFn(), 1   # TODO
     for image, (gt_label, gt_bbox, gt_landmark) in eval_data:
 
         im_tensor = [ image_tools.convert_image_to_tensor(image[i,:,:,:]) for i in range(image.shape[0]) ]
@@ -52,9 +52,6 @@ def eval_net(args, net, eval_data):
 
         with torch.no_grad():
             cls_pred, box_offset_pred, landmark_offset_pred = net(im_tensor)
-
-
-        # all_loss, cls_loss, offset_loss = lossfn.loss(gt_label=label_y,gt_offset=bbox_y, pred_label=cls_pred, pred_offset=box_offset_pred)
 
         cls_loss        = lossfn.cls_loss(gt_label, cls_pred)
         box_offset_loss = lossfn.box_loss(gt_label, gt_bbox, box_offset_pred)
@@ -132,7 +129,7 @@ def train_pnet(args, train_imdb, eval_imdb):
             
             cls_loss = lossfn.cls_loss(gt_label, cls_pred)
             box_offset_loss = lossfn.box_loss(gt_label, gt_bbox, box_offset_pred)
-            landmark_loss = lossfn.landmark_loss(gt_label, gt_landmark, landmark_offset_pred)
+            landmark_loss = lossfn.landmark_loss(gt_label, gt_landmark, landmark_offset_pred)  # BUG
             all_loss = cls_loss * args.factors[0] + box_offset_loss * args.factors[1] + landmark_loss * args.factors[2]
             
             accuracy = compute_accuracy(cls_pred, gt_label)
@@ -176,7 +173,7 @@ def train_rnet(args, imdb, eval_imdb):
 
     optimizer  = torch.optim.Adam(net.parameters(), lr=args.lr)
     train_data = TrainImageReader(imdb, args.imgsize, args.batch_size, shuffle=True)
-    eval_data  = TrainImageReader(eval_imdb, args.imgsize, args.batch_size, shuffle=False)
+    eval_data  = TrainImageReader(eval_imdb, args.imgsize, args.batch_size, shuffle=True)
 
     for cur_epoch in range(1, args.end_epoch+1):
 
@@ -195,7 +192,7 @@ def train_rnet(args, imdb, eval_imdb):
             gt_bbox   = Variable(torch.from_numpy(gt_bbox).float())
             gt_landmark = Variable(torch.from_numpy(gt_landmark).float())
 
-            if use_cuda:
+            if args.use_cuda:
                 im_tensor = im_tensor.cuda()
                 gt_label  = gt_label.cuda()
                 gt_bbox   = gt_bbox.cuda()
@@ -228,7 +225,8 @@ def train_rnet(args, imdb, eval_imdb):
             optimizer.zero_grad()
             all_loss.backward()
             optimizer.step()
-
+        
+        eval_data.reset()
         res_cache = eval_net(args, net, eval_data)
 
         torch.save(net.state_dict(), os.path.join(args.model_path,"rnet_epoch_%d.pt" % cur_epoch))

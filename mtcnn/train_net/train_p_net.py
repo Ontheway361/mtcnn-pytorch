@@ -10,7 +10,7 @@ from mtcnn.train_net.train import train_pnet
 
 from IPython import embed
 
-anno_dir = '/home/jovyan/gpu3-data2/lujie/data/benchmark_images/faceu/anno_store'
+anno_dir = '/home/faceu/5keypoints/anno_store'
 
 def train_net(args):
 
@@ -32,8 +32,8 @@ def parse_args():
 
     parser.add_argument('--anno_file',  type=str,   default=os.path.join(anno_dir, 'pnet/train_anno_12.txt'))
     parser.add_argument('--eval_file',  type=str,   default=os.path.join(anno_dir, 'pnet/eval_anno_12.txt'))
-    parser.add_argument('--model_path', type=str,   default='./aku_model/pnet')
-    parser.add_argument('--factors',    type=list,  default=[1.5, 0.9, 0.6])
+    parser.add_argument('--model_path', type=str,   default='./model/checkout/pnet')
+    parser.add_argument('--factors',    type=list,  default=[1.0, 0.5, 0.5])
     parser.add_argument('--end_epoch',  type=int,   default=20)      # TODO
     parser.add_argument('--frequent',   type=int,   default=1000)
     parser.add_argument('--lr',         type=float, default=1e-3)    # TODO  :: 1e-2

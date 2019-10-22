@@ -1,0 +1,5 @@
+jovyan    2458  0.0  0.0  13140  1012 pts/29   S    08:28   0:00 grep mtcnn/train_net/train_o_net.py
+jovyan   30821 37.7  5.8 27574824 3824732 pts/31 Tl 05:02  77:45 python mtcnn/train_net/train_o_net.py
+jovyan   30943 99.8  5.8 27574552 3824588 pts/29 Rl 06:26 121:59 python -u mtcnn/train_net/train_o_net.py
+jovyan   31498 99.8  5.8 27705468 3824888 pts/21 Rl 07:40  48:17 python -u mtcnn/train_net/train_o_net.py
+jovyan   31529  1.1  1.4 4163560 960988 pts/32 Sl+  07:53   0:24 python mtcnn/train_net/train_o_net.py

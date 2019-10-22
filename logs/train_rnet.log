@@ -1,0 +1,166 @@
+Flipping action will add 922688 images to imdb
+train : 1845376	eval : 395438
+/home/jovyan/gpu3-data2/lujie/mtcnn-pytorch-5keypoints/mtcnn/core/models.py:12: UserWarning: nn.init.xavier_uniform is now deprecated in favor of nn.init.xavier_uniform_.
+  nn.init.xavier_uniform(m.weight.data)
+/home/jovyan/gpu3-data2/lujie/mtcnn-pytorch-5keypoints/mtcnn/core/models.py:13: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  nn.init.constant(m.bias, 0.1)
+Epoch: 1|20, bid: 1000, acc: 0.8498, cls_loss: 0.3614, bbox_loss: 0.0226, lmk_loss: 0.0277, all_loss: 0.3866
+Epoch: 1|20, bid: 2000, acc: 0.8740, cls_loss: 0.3130, bbox_loss: 0.0212, lmk_loss: 0.0262, all_loss: 0.3367
+Epoch: 1|20, bid: 3000, acc: 0.8874, cls_loss: 0.2846, bbox_loss: 0.0205, lmk_loss: 0.0255, all_loss: 0.3076
+Epoch: 1|20, bid: 4000, acc: 0.8964, cls_loss: 0.2650, bbox_loss: 0.0199, lmk_loss: 0.0251, all_loss: 0.2875
+Epoch: 1|20, bid: 5000, acc: 0.9029, cls_loss: 0.2504, bbox_loss: 0.0195, lmk_loss: 0.0247, all_loss: 0.2725
+Epoch: 1|20, bid: 6000, acc: 0.9079, cls_loss: 0.2392, bbox_loss: 0.0191, lmk_loss: 0.0244, all_loss: 0.2610
+Epoch: 1|20, bid: 7000, acc: 0.9119, cls_loss: 0.2300, bbox_loss: 0.0188, lmk_loss: 0.0242, all_loss: 0.2515
+Eval result acc: 0.9361, cls_loss: 0.1682, bbox_loss: 0.0166, lmk_loss: 0.0184, all_loss: 0.1857
+Epoch: 2|20, bid: 1000, acc: 0.9405, cls_loss: 0.1654, bbox_loss: 0.0167, lmk_loss: 0.0227, all_loss: 0.1851
+Epoch: 2|20, bid: 2000, acc: 0.9408, cls_loss: 0.1639, bbox_loss: 0.0166, lmk_loss: 0.0226, all_loss: 0.1836
+Epoch: 2|20, bid: 3000, acc: 0.9415, cls_loss: 0.1618, bbox_loss: 0.0165, lmk_loss: 0.0226, all_loss: 0.1814
+Epoch: 2|20, bid: 4000, acc: 0.9421, cls_loss: 0.1604, bbox_loss: 0.0164, lmk_loss: 0.0225, all_loss: 0.1799
+Epoch: 2|20, bid: 5000, acc: 0.9426, cls_loss: 0.1590, bbox_loss: 0.0164, lmk_loss: 0.0225, all_loss: 0.1784
+Epoch: 2|20, bid: 6000, acc: 0.9433, cls_loss: 0.1570, bbox_loss: 0.0163, lmk_loss: 0.0225, all_loss: 0.1764
+Epoch: 2|20, bid: 7000, acc: 0.9438, cls_loss: 0.1557, bbox_loss: 0.0162, lmk_loss: 0.0225, all_loss: 0.1751
+Eval result acc: 0.9476, cls_loss: 0.1447, bbox_loss: 0.0158, lmk_loss: 0.0260, all_loss: 0.1656
+Epoch: 3|20, bid: 1000, acc: 0.9502, cls_loss: 0.1408, bbox_loss: 0.0159, lmk_loss: 0.0222, all_loss: 0.1598
+Epoch: 3|20, bid: 2000, acc: 0.9499, cls_loss: 0.1406, bbox_loss: 0.0159, lmk_loss: 0.0222, all_loss: 0.1596
+Epoch: 3|20, bid: 3000, acc: 0.9499, cls_loss: 0.1401, bbox_loss: 0.0158, lmk_loss: 0.0222, all_loss: 0.1591
+Epoch: 3|20, bid: 4000, acc: 0.9499, cls_loss: 0.1399, bbox_loss: 0.0158, lmk_loss: 0.0222, all_loss: 0.1588
+Epoch: 3|20, bid: 5000, acc: 0.9502, cls_loss: 0.1390, bbox_loss: 0.0157, lmk_loss: 0.0221, all_loss: 0.1579
+Epoch: 3|20, bid: 6000, acc: 0.9503, cls_loss: 0.1386, bbox_loss: 0.0157, lmk_loss: 0.0221, all_loss: 0.1575
+Epoch: 3|20, bid: 7000, acc: 0.9505, cls_loss: 0.1382, bbox_loss: 0.0157, lmk_loss: 0.0222, all_loss: 0.1571
+Eval result acc: 0.9501, cls_loss: 0.1361, bbox_loss: 0.0155, lmk_loss: 0.0356, all_loss: 0.1617
+Epoch: 4|20, bid: 1000, acc: 0.9545, cls_loss: 0.1283, bbox_loss: 0.0156, lmk_loss: 0.0220, all_loss: 0.1472
+Epoch: 4|20, bid: 2000, acc: 0.9539, cls_loss: 0.1291, bbox_loss: 0.0156, lmk_loss: 0.0221, all_loss: 0.1479
+Epoch: 4|20, bid: 3000, acc: 0.9540, cls_loss: 0.1288, bbox_loss: 0.0155, lmk_loss: 0.0222, all_loss: 0.1476
+Epoch: 4|20, bid: 4000, acc: 0.9539, cls_loss: 0.1287, bbox_loss: 0.0155, lmk_loss: 0.0222, all_loss: 0.1475
+Epoch: 4|20, bid: 5000, acc: 0.9540, cls_loss: 0.1284, bbox_loss: 0.0155, lmk_loss: 0.0222, all_loss: 0.1473
+Epoch: 4|20, bid: 6000, acc: 0.9540, cls_loss: 0.1282, bbox_loss: 0.0155, lmk_loss: 0.0222, all_loss: 0.1471
+Epoch: 4|20, bid: 7000, acc: 0.9539, cls_loss: 0.1283, bbox_loss: 0.0155, lmk_loss: 0.0222, all_loss: 0.1471
+Eval result acc: 0.9524, cls_loss: 0.1335, bbox_loss: 0.0154, lmk_loss: 0.0144, all_loss: 0.1484
+Epoch: 5|20, bid: 1000, acc: 0.9576, cls_loss: 0.1212, bbox_loss: 0.0153, lmk_loss: 0.0220, all_loss: 0.1399
+Epoch: 5|20, bid: 2000, acc: 0.9567, cls_loss: 0.1219, bbox_loss: 0.0153, lmk_loss: 0.0222, all_loss: 0.1406
+Epoch: 5|20, bid: 3000, acc: 0.9566, cls_loss: 0.1219, bbox_loss: 0.0153, lmk_loss: 0.0222, all_loss: 0.1406
+Epoch: 5|20, bid: 4000, acc: 0.9565, cls_loss: 0.1217, bbox_loss: 0.0153, lmk_loss: 0.0223, all_loss: 0.1405
+Epoch: 5|20, bid: 5000, acc: 0.9566, cls_loss: 0.1216, bbox_loss: 0.0152, lmk_loss: 0.0222, all_loss: 0.1404
+Epoch: 5|20, bid: 6000, acc: 0.9566, cls_loss: 0.1214, bbox_loss: 0.0152, lmk_loss: 0.0222, all_loss: 0.1401
+Epoch: 5|20, bid: 7000, acc: 0.9566, cls_loss: 0.1214, bbox_loss: 0.0152, lmk_loss: 0.0222, all_loss: 0.1401
+Eval result acc: 0.9555, cls_loss: 0.1242, bbox_loss: 0.0151, lmk_loss: 0.0200, all_loss: 0.1417
+Epoch: 6|20, bid: 1000, acc: 0.9594, cls_loss: 0.1157, bbox_loss: 0.0152, lmk_loss: 0.0222, all_loss: 0.1345
+Epoch: 6|20, bid: 2000, acc: 0.9586, cls_loss: 0.1161, bbox_loss: 0.0151, lmk_loss: 0.0222, all_loss: 0.1347
+Epoch: 6|20, bid: 3000, acc: 0.9586, cls_loss: 0.1157, bbox_loss: 0.0152, lmk_loss: 0.0223, all_loss: 0.1344
+Epoch: 6|20, bid: 4000, acc: 0.9584, cls_loss: 0.1159, bbox_loss: 0.0152, lmk_loss: 0.0223, all_loss: 0.1346
+Epoch: 6|20, bid: 5000, acc: 0.9584, cls_loss: 0.1160, bbox_loss: 0.0152, lmk_loss: 0.0222, all_loss: 0.1347
+Epoch: 6|20, bid: 6000, acc: 0.9584, cls_loss: 0.1161, bbox_loss: 0.0152, lmk_loss: 0.0222, all_loss: 0.1348
+Epoch: 6|20, bid: 7000, acc: 0.9583, cls_loss: 0.1162, bbox_loss: 0.0152, lmk_loss: 0.0222, all_loss: 0.1349
+Eval result acc: 0.9555, cls_loss: 0.1233, bbox_loss: 0.0152, lmk_loss: 0.0273, all_loss: 0.1445
+Epoch: 7|20, bid: 1000, acc: 0.9615, cls_loss: 0.1098, bbox_loss: 0.0152, lmk_loss: 0.0223, all_loss: 0.1286
+Epoch: 7|20, bid: 2000, acc: 0.9606, cls_loss: 0.1107, bbox_loss: 0.0151, lmk_loss: 0.0223, all_loss: 0.1294
+Epoch: 7|20, bid: 3000, acc: 0.9603, cls_loss: 0.1111, bbox_loss: 0.0151, lmk_loss: 0.0223, all_loss: 0.1298
+Epoch: 7|20, bid: 4000, acc: 0.9603, cls_loss: 0.1111, bbox_loss: 0.0151, lmk_loss: 0.0223, all_loss: 0.1298
+Epoch: 7|20, bid: 5000, acc: 0.9601, cls_loss: 0.1113, bbox_loss: 0.0151, lmk_loss: 0.0223, all_loss: 0.1300
+Epoch: 7|20, bid: 6000, acc: 0.9599, cls_loss: 0.1117, bbox_loss: 0.0151, lmk_loss: 0.0223, all_loss: 0.1304
+Epoch: 7|20, bid: 7000, acc: 0.9597, cls_loss: 0.1121, bbox_loss: 0.0151, lmk_loss: 0.0223, all_loss: 0.1308
+Eval result acc: 0.9566, cls_loss: 0.1175, bbox_loss: 0.0149, lmk_loss: 0.0199, all_loss: 0.1349
+Epoch: 8|20, bid: 1000, acc: 0.9625, cls_loss: 0.1064, bbox_loss: 0.0150, lmk_loss: 0.0223, all_loss: 0.1250
+Epoch: 8|20, bid: 2000, acc: 0.9615, cls_loss: 0.1075, bbox_loss: 0.0150, lmk_loss: 0.0223, all_loss: 0.1261
+Epoch: 8|20, bid: 3000, acc: 0.9614, cls_loss: 0.1074, bbox_loss: 0.0150, lmk_loss: 0.0223, all_loss: 0.1260
+Epoch: 8|20, bid: 4000, acc: 0.9613, cls_loss: 0.1077, bbox_loss: 0.0150, lmk_loss: 0.0224, all_loss: 0.1265
+Epoch: 8|20, bid: 5000, acc: 0.9613, cls_loss: 0.1077, bbox_loss: 0.0150, lmk_loss: 0.0224, all_loss: 0.1264
+Epoch: 8|20, bid: 6000, acc: 0.9612, cls_loss: 0.1080, bbox_loss: 0.0151, lmk_loss: 0.0224, all_loss: 0.1268
+Epoch: 8|20, bid: 7000, acc: 0.9612, cls_loss: 0.1079, bbox_loss: 0.0151, lmk_loss: 0.0224, all_loss: 0.1267
+Eval result acc: 0.9553, cls_loss: 0.1217, bbox_loss: 0.0151, lmk_loss: 0.0171, all_loss: 0.1378
+Epoch: 9|20, bid: 1000, acc: 0.9643, cls_loss: 0.1010, bbox_loss: 0.0152, lmk_loss: 0.0224, all_loss: 0.1198
+Epoch: 9|20, bid: 2000, acc: 0.9635, cls_loss: 0.1022, bbox_loss: 0.0152, lmk_loss: 0.0224, all_loss: 0.1209
+Epoch: 9|20, bid: 3000, acc: 0.9631, cls_loss: 0.1034, bbox_loss: 0.0151, lmk_loss: 0.0224, all_loss: 0.1221
+Epoch: 9|20, bid: 4000, acc: 0.9628, cls_loss: 0.1040, bbox_loss: 0.0151, lmk_loss: 0.0224, all_loss: 0.1227
+Epoch: 9|20, bid: 5000, acc: 0.9626, cls_loss: 0.1043, bbox_loss: 0.0151, lmk_loss: 0.0224, all_loss: 0.1230
+Epoch: 9|20, bid: 6000, acc: 0.9625, cls_loss: 0.1043, bbox_loss: 0.0151, lmk_loss: 0.0225, all_loss: 0.1231
+Epoch: 9|20, bid: 7000, acc: 0.9623, cls_loss: 0.1046, bbox_loss: 0.0151, lmk_loss: 0.0225, all_loss: 0.1234
+Eval result acc: 0.9597, cls_loss: 0.1166, bbox_loss: 0.0151, lmk_loss: 0.0201, all_loss: 0.1342
+Epoch: 10|20, bid: 1000, acc: 0.9652, cls_loss: 0.1001, bbox_loss: 0.0152, lmk_loss: 0.0227, all_loss: 0.1190
+Epoch: 10|20, bid: 2000, acc: 0.9644, cls_loss: 0.1004, bbox_loss: 0.0151, lmk_loss: 0.0226, all_loss: 0.1193
+Epoch: 10|20, bid: 3000, acc: 0.9642, cls_loss: 0.1005, bbox_loss: 0.0152, lmk_loss: 0.0225, all_loss: 0.1194
+Epoch: 10|20, bid: 4000, acc: 0.9637, cls_loss: 0.1013, bbox_loss: 0.0152, lmk_loss: 0.0225, all_loss: 0.1201
+Epoch: 10|20, bid: 5000, acc: 0.9636, cls_loss: 0.1014, bbox_loss: 0.0152, lmk_loss: 0.0225, all_loss: 0.1202
+Epoch: 10|20, bid: 6000, acc: 0.9634, cls_loss: 0.1016, bbox_loss: 0.0152, lmk_loss: 0.0225, all_loss: 0.1205
+Epoch: 10|20, bid: 7000, acc: 0.9634, cls_loss: 0.1018, bbox_loss: 0.0152, lmk_loss: 0.0225, all_loss: 0.1206
+Eval result acc: 0.9594, cls_loss: 0.1139, bbox_loss: 0.0156, lmk_loss: 0.0220, all_loss: 0.1327
+Epoch: 11|20, bid: 1000, acc: 0.9667, cls_loss: 0.0941, bbox_loss: 0.0153, lmk_loss: 0.0227, all_loss: 0.1131
+Epoch: 11|20, bid: 2000, acc: 0.9656, cls_loss: 0.0963, bbox_loss: 0.0152, lmk_loss: 0.0227, all_loss: 0.1152
+Epoch: 11|20, bid: 3000, acc: 0.9650, cls_loss: 0.0974, bbox_loss: 0.0152, lmk_loss: 0.0227, all_loss: 0.1164
+Epoch: 11|20, bid: 4000, acc: 0.9647, cls_loss: 0.0984, bbox_loss: 0.0152, lmk_loss: 0.0226, all_loss: 0.1173
+Epoch: 11|20, bid: 5000, acc: 0.9646, cls_loss: 0.0986, bbox_loss: 0.0152, lmk_loss: 0.0226, all_loss: 0.1175
+Epoch: 11|20, bid: 6000, acc: 0.9645, cls_loss: 0.0987, bbox_loss: 0.0152, lmk_loss: 0.0226, all_loss: 0.1176
+Epoch: 11|20, bid: 7000, acc: 0.9644, cls_loss: 0.0989, bbox_loss: 0.0152, lmk_loss: 0.0226, all_loss: 0.1178
+Eval result acc: 0.9603, cls_loss: 0.1116, bbox_loss: 0.0152, lmk_loss: 0.0195, all_loss: 0.1289
+Epoch: 12|20, bid: 1000, acc: 0.9667, cls_loss: 0.0942, bbox_loss: 0.0152, lmk_loss: 0.0228, all_loss: 0.1132
+Epoch: 12|20, bid: 2000, acc: 0.9660, cls_loss: 0.0949, bbox_loss: 0.0153, lmk_loss: 0.0227, all_loss: 0.1139
+Epoch: 12|20, bid: 3000, acc: 0.9655, cls_loss: 0.0954, bbox_loss: 0.0153, lmk_loss: 0.0227, all_loss: 0.1144
+Epoch: 12|20, bid: 4000, acc: 0.9652, cls_loss: 0.0962, bbox_loss: 0.0153, lmk_loss: 0.0227, all_loss: 0.1152
+Epoch: 12|20, bid: 5000, acc: 0.9652, cls_loss: 0.0963, bbox_loss: 0.0153, lmk_loss: 0.0227, all_loss: 0.1153
+Epoch: 12|20, bid: 6000, acc: 0.9651, cls_loss: 0.0964, bbox_loss: 0.0152, lmk_loss: 0.0228, all_loss: 0.1154
+Epoch: 12|20, bid: 7000, acc: 0.9650, cls_loss: 0.0966, bbox_loss: 0.0153, lmk_loss: 0.0228, all_loss: 0.1157
+Eval result acc: 0.9589, cls_loss: 0.1111, bbox_loss: 0.0153, lmk_loss: 0.0200, all_loss: 0.1287
+Epoch: 13|20, bid: 1000, acc: 0.9680, cls_loss: 0.0911, bbox_loss: 0.0154, lmk_loss: 0.0228, all_loss: 0.1102
+Epoch: 13|20, bid: 2000, acc: 0.9670, cls_loss: 0.0920, bbox_loss: 0.0153, lmk_loss: 0.0228, all_loss: 0.1110
+Epoch: 13|20, bid: 3000, acc: 0.9666, cls_loss: 0.0932, bbox_loss: 0.0153, lmk_loss: 0.0228, all_loss: 0.1123
+Epoch: 13|20, bid: 4000, acc: 0.9665, cls_loss: 0.0933, bbox_loss: 0.0153, lmk_loss: 0.0227, all_loss: 0.1124
+Epoch: 13|20, bid: 5000, acc: 0.9663, cls_loss: 0.0939, bbox_loss: 0.0153, lmk_loss: 0.0227, all_loss: 0.1129
+Epoch: 13|20, bid: 6000, acc: 0.9661, cls_loss: 0.0942, bbox_loss: 0.0153, lmk_loss: 0.0228, all_loss: 0.1132
+Epoch: 13|20, bid: 7000, acc: 0.9660, cls_loss: 0.0944, bbox_loss: 0.0153, lmk_loss: 0.0228, all_loss: 0.1135
+Eval result acc: 0.9617, cls_loss: 0.1104, bbox_loss: 0.0153, lmk_loss: 0.0202, all_loss: 0.1282
+Epoch: 14|20, bid: 1000, acc: 0.9675, cls_loss: 0.0912, bbox_loss: 0.0156, lmk_loss: 0.0228, all_loss: 0.1105
+Epoch: 14|20, bid: 2000, acc: 0.9670, cls_loss: 0.0914, bbox_loss: 0.0154, lmk_loss: 0.0228, all_loss: 0.1106
+Epoch: 14|20, bid: 3000, acc: 0.9669, cls_loss: 0.0914, bbox_loss: 0.0154, lmk_loss: 0.0229, all_loss: 0.1105
+Epoch: 14|20, bid: 4000, acc: 0.9668, cls_loss: 0.0917, bbox_loss: 0.0154, lmk_loss: 0.0229, all_loss: 0.1109
+Epoch: 14|20, bid: 5000, acc: 0.9667, cls_loss: 0.0921, bbox_loss: 0.0154, lmk_loss: 0.0229, all_loss: 0.1113
+Epoch: 14|20, bid: 6000, acc: 0.9666, cls_loss: 0.0923, bbox_loss: 0.0154, lmk_loss: 0.0229, all_loss: 0.1115
+Epoch: 14|20, bid: 7000, acc: 0.9666, cls_loss: 0.0922, bbox_loss: 0.0154, lmk_loss: 0.0230, all_loss: 0.1114
+Eval result acc: 0.9623, cls_loss: 0.1108, bbox_loss: 0.0156, lmk_loss: 0.0176, all_loss: 0.1274
+Epoch: 15|20, bid: 1000, acc: 0.9695, cls_loss: 0.0866, bbox_loss: 0.0154, lmk_loss: 0.0230, all_loss: 0.1059
+Epoch: 15|20, bid: 2000, acc: 0.9685, cls_loss: 0.0882, bbox_loss: 0.0155, lmk_loss: 0.0231, all_loss: 0.1075
+Epoch: 15|20, bid: 3000, acc: 0.9680, cls_loss: 0.0892, bbox_loss: 0.0155, lmk_loss: 0.0230, all_loss: 0.1085
+Epoch: 15|20, bid: 4000, acc: 0.9678, cls_loss: 0.0896, bbox_loss: 0.0155, lmk_loss: 0.0230, all_loss: 0.1089
+Epoch: 15|20, bid: 5000, acc: 0.9675, cls_loss: 0.0901, bbox_loss: 0.0155, lmk_loss: 0.0231, all_loss: 0.1094
+Epoch: 15|20, bid: 6000, acc: 0.9673, cls_loss: 0.0904, bbox_loss: 0.0155, lmk_loss: 0.0231, all_loss: 0.1096
+Epoch: 15|20, bid: 7000, acc: 0.9673, cls_loss: 0.0904, bbox_loss: 0.0155, lmk_loss: 0.0231, all_loss: 0.1097
+Eval result acc: 0.9618, cls_loss: 0.1093, bbox_loss: 0.0154, lmk_loss: 0.0354, all_loss: 0.1347
+Epoch: 16|20, bid: 1000, acc: 0.9701, cls_loss: 0.0855, bbox_loss: 0.0155, lmk_loss: 0.0233, all_loss: 0.1049
+Epoch: 16|20, bid: 2000, acc: 0.9695, cls_loss: 0.0861, bbox_loss: 0.0155, lmk_loss: 0.0231, all_loss: 0.1055
+Epoch: 16|20, bid: 3000, acc: 0.9689, cls_loss: 0.0873, bbox_loss: 0.0155, lmk_loss: 0.0230, all_loss: 0.1066
+Epoch: 16|20, bid: 4000, acc: 0.9686, cls_loss: 0.0879, bbox_loss: 0.0155, lmk_loss: 0.0231, all_loss: 0.1072
+Epoch: 16|20, bid: 5000, acc: 0.9684, cls_loss: 0.0881, bbox_loss: 0.0155, lmk_loss: 0.0231, all_loss: 0.1074
+Epoch: 16|20, bid: 6000, acc: 0.9681, cls_loss: 0.0886, bbox_loss: 0.0155, lmk_loss: 0.0231, all_loss: 0.1079
+Epoch: 16|20, bid: 7000, acc: 0.9680, cls_loss: 0.0889, bbox_loss: 0.0155, lmk_loss: 0.0231, all_loss: 0.1082
+Eval result acc: 0.9612, cls_loss: 0.1111, bbox_loss: 0.0160, lmk_loss: 0.0185, all_loss: 0.1284
+Epoch: 17|20, bid: 1000, acc: 0.9703, cls_loss: 0.0849, bbox_loss: 0.0155, lmk_loss: 0.0232, all_loss: 0.1042
+Epoch: 17|20, bid: 2000, acc: 0.9692, cls_loss: 0.0863, bbox_loss: 0.0155, lmk_loss: 0.0231, all_loss: 0.1056
+Epoch: 17|20, bid: 3000, acc: 0.9689, cls_loss: 0.0866, bbox_loss: 0.0156, lmk_loss: 0.0231, all_loss: 0.1059
+Epoch: 17|20, bid: 4000, acc: 0.9689, cls_loss: 0.0865, bbox_loss: 0.0156, lmk_loss: 0.0231, all_loss: 0.1059
+Epoch: 17|20, bid: 5000, acc: 0.9688, cls_loss: 0.0867, bbox_loss: 0.0156, lmk_loss: 0.0231, all_loss: 0.1061
+Epoch: 17|20, bid: 6000, acc: 0.9685, cls_loss: 0.0872, bbox_loss: 0.0156, lmk_loss: 0.0231, all_loss: 0.1066
+Epoch: 17|20, bid: 7000, acc: 0.9684, cls_loss: 0.0874, bbox_loss: 0.0156, lmk_loss: 0.0231, all_loss: 0.1068
+Eval result acc: 0.9593, cls_loss: 0.1154, bbox_loss: 0.0158, lmk_loss: 0.0263, all_loss: 0.1364
+Epoch: 18|20, bid: 1000, acc: 0.9712, cls_loss: 0.0817, bbox_loss: 0.0157, lmk_loss: 0.0231, all_loss: 0.1012
+Epoch: 18|20, bid: 2000, acc: 0.9701, cls_loss: 0.0832, bbox_loss: 0.0157, lmk_loss: 0.0232, all_loss: 0.1026
+Epoch: 18|20, bid: 3000, acc: 0.9697, cls_loss: 0.0842, bbox_loss: 0.0156, lmk_loss: 0.0232, all_loss: 0.1036
+Epoch: 18|20, bid: 4000, acc: 0.9693, cls_loss: 0.0851, bbox_loss: 0.0156, lmk_loss: 0.0232, all_loss: 0.1046
+Epoch: 18|20, bid: 5000, acc: 0.9692, cls_loss: 0.0854, bbox_loss: 0.0157, lmk_loss: 0.0232, all_loss: 0.1048
+Epoch: 18|20, bid: 6000, acc: 0.9691, cls_loss: 0.0856, bbox_loss: 0.0157, lmk_loss: 0.0233, all_loss: 0.1050
+Epoch: 18|20, bid: 7000, acc: 0.9690, cls_loss: 0.0858, bbox_loss: 0.0157, lmk_loss: 0.0233, all_loss: 0.1053
+Eval result acc: 0.9616, cls_loss: 0.1074, bbox_loss: 0.0159, lmk_loss: 0.0215, all_loss: 0.1261
+Epoch: 19|20, bid: 1000, acc: 0.9714, cls_loss: 0.0804, bbox_loss: 0.0158, lmk_loss: 0.0236, all_loss: 0.1001
+Epoch: 19|20, bid: 2000, acc: 0.9702, cls_loss: 0.0826, bbox_loss: 0.0158, lmk_loss: 0.0234, all_loss: 0.1023
+Epoch: 19|20, bid: 3000, acc: 0.9702, cls_loss: 0.0825, bbox_loss: 0.0158, lmk_loss: 0.0233, all_loss: 0.1021
+Epoch: 19|20, bid: 4000, acc: 0.9700, cls_loss: 0.0827, bbox_loss: 0.0158, lmk_loss: 0.0233, all_loss: 0.1023
+Epoch: 19|20, bid: 5000, acc: 0.9699, cls_loss: 0.0832, bbox_loss: 0.0158, lmk_loss: 0.0233, all_loss: 0.1028
+Epoch: 19|20, bid: 6000, acc: 0.9697, cls_loss: 0.0837, bbox_loss: 0.0158, lmk_loss: 0.0233, all_loss: 0.1033
+Epoch: 19|20, bid: 7000, acc: 0.9695, cls_loss: 0.0842, bbox_loss: 0.0158, lmk_loss: 0.0234, all_loss: 0.1038
+Eval result acc: 0.9624, cls_loss: 0.1087, bbox_loss: 0.0155, lmk_loss: 0.0201, all_loss: 0.1265
+Epoch: 20|20, bid: 1000, acc: 0.9711, cls_loss: 0.0807, bbox_loss: 0.0158, lmk_loss: 0.0234, all_loss: 0.1003
+Epoch: 20|20, bid: 2000, acc: 0.9707, cls_loss: 0.0809, bbox_loss: 0.0158, lmk_loss: 0.0234, all_loss: 0.1006
+Epoch: 20|20, bid: 3000, acc: 0.9704, cls_loss: 0.0818, bbox_loss: 0.0159, lmk_loss: 0.0233, all_loss: 0.1014
+Epoch: 20|20, bid: 4000, acc: 0.9702, cls_loss: 0.0824, bbox_loss: 0.0159, lmk_loss: 0.0233, all_loss: 0.1020
+Epoch: 20|20, bid: 5000, acc: 0.9701, cls_loss: 0.0827, bbox_loss: 0.0158, lmk_loss: 0.0233, all_loss: 0.1023
+Epoch: 20|20, bid: 6000, acc: 0.9699, cls_loss: 0.0830, bbox_loss: 0.0158, lmk_loss: 0.0233, all_loss: 0.1025
+Epoch: 20|20, bid: 7000, acc: 0.9698, cls_loss: 0.0832, bbox_loss: 0.0158, lmk_loss: 0.0233, all_loss: 0.1028
+Eval result acc: 0.9631, cls_loss: 0.1067, bbox_loss: 0.0161, lmk_loss: 0.0229, all_loss: 0.1262

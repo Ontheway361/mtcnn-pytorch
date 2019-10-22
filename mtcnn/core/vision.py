@@ -102,7 +102,7 @@ def vis_face(im_array, dets, landmarks, save_name):
             landmarks_one = landmarks[i, :]
             landmarks_one = landmarks_one.reshape((5, 2))  # TODO :: 68 <--> 5
             for j in range(5):
-                cir1 = Circle(xy=(landmarks_one[j, 0], landmarks_one[j, 1]), radius=2, alpha=0.4, color="red")
+                cir1 = Circle(xy=(landmarks_one[j, 0], landmarks_one[j, 1]), radius=2, alpha=1, color="green")
                 pylab.gca().add_patch(cir1)
 
         pylab.savefig(save_name)

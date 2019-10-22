@@ -12,6 +12,7 @@ import mtcnn.core.image_tools as image_tools
 
 from IPython import embed
 
+
 def create_mtcnn_net(p_model_path=None, r_model_path=None, o_model_path=None, use_cuda=False):
 
     pnet, rnet, onet = None, None, None
@@ -242,7 +243,7 @@ class MtcnnDetector(object):
             if self.pnet_detector.use_cuda:
                 feed_imgs = feed_imgs.cuda()
 
-            cls_map, reg, _ = self.pnet_detector(feed_imgs)   # CORE
+            cls_map, reg, _ = self.pnet_detector(feed_imgs)   # CORE， Don't look landmark
 
             cls_map_np  = image_tools.convert_chwTensor_to_hwcNumpy(cls_map.cpu())
             reg_np      = image_tools.convert_chwTensor_to_hwcNumpy(reg.cpu())
@@ -327,7 +328,7 @@ class MtcnnDetector(object):
         if self.rnet_detector.use_cuda:
             feed_imgs = feed_imgs.cuda()
 
-        cls_map, reg, _ = self.rnet_detector(feed_imgs)
+        cls_map, reg, _ = self.rnet_detector(feed_imgs)  # CORE
 
         cls_map = cls_map.cpu().data.numpy()
         reg = reg.cpu().data.numpy()
@@ -403,7 +404,7 @@ class MtcnnDetector(object):
         if self.rnet_detector.use_cuda:
             feed_imgs = feed_imgs.cuda()
 
-        cls_map, reg, landmark = self.onet_detector(feed_imgs)
+        cls_map, reg, landmark = self.onet_detector(feed_imgs)  # look all
 
         cls_map   = cls_map.cpu().data.numpy()
         reg       = reg.cpu().data.numpy()
@@ -460,7 +461,7 @@ class MtcnnDetector(object):
 
         # pnet
         if self.pnet_detector:
-            boxes_align = self.detect_pnet(img)
+            boxes_align = self.detect_pnet(img)   # CORE
             if boxes_align is None:
                 return np.array([]), np.array([])
 
@@ -469,7 +470,7 @@ class MtcnnDetector(object):
 
         # rnet
         if self.rnet_detector:
-            boxes_align = self.detect_rnet(img, boxes_align)
+            boxes_align = self.detect_rnet(img, boxes_align)  # CORE
             if boxes_align is None:
                 return np.array([]), np.array([])
 
@@ -478,8 +479,8 @@ class MtcnnDetector(object):
 
         # onet
         if self.onet_detector:
-            boxes_align, landmark_align = self.detect_onet(img, boxes_align)
-            if boxes_align is None:
+            boxes_align, landmark_align = self.detect_onet(img, boxes_align)  # CORE
+            if boxes_align is None: 
                 return np.array([]), np.array([])
 
             t3 = time.time() - t

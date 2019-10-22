@@ -16,68 +16,68 @@ from mtcnn.core.image_reader import TestImageLoader
 from mtcnn.core.detect import MtcnnDetector,create_mtcnn_net
 
 
-data_dir  = '/home/faceu/train_data'
-anno_file = './anno_store/wide_anno_train.txt'     # TODO
-pnet_file = './5_keypoints_model/pnet_epoch.pt'
-rnet_file = './5_keypoints_model/rnet_epoch.pt'
-prefix    = ''
+data_dir  = '/home/faceu'
+anno_dir  = os.path.join(data_dir, '5keypoints')
+pnet_file = './model/checkout/pnet/pnet_epoch_20.pt'
+rnet_file = './model/checkout/rnet/rnet_epoch_14.pt'
 use_cuda  = True
 
 
-def gen_onet_data(data_dir, anno_file, pnet_file, rnet_file, prefix_path='', use_cuda=True, vis=False):
+def gen_onet_data(data_dir, anno_dir, pnet_file, rnet_file, use_cuda=True, vis=False):
 
 
-#     pnet, rnet, _  = create_mtcnn_net(p_model_path=pnet_file, r_model_path=rnet_file, use_cuda=use_cuda)
-#     mtcnn_detector = MtcnnDetector(pnet=pnet, rnet=rnet, min_face_size=12)
+    pnet, rnet, _  = create_mtcnn_net(p_model_path=pnet_file, r_model_path=rnet_file, use_cuda=use_cuda)
+    mtcnn_detector = MtcnnDetector(pnet=pnet, rnet=rnet, min_face_size=12)
+    
+    anno_file = os.path.join(anno_dir, 'anno_store/wide_anno_train.txt')
+    imagedb = ImageDB(anno_file, mode='test', prefix_path='')
+    imdb    = imagedb.load_imdb()
+    image_reader = TestImageLoader(imdb, 1, False)
+    print('size:%d' % image_reader.size) # still use wideface dataset
 
-#     imagedb = ImageDB(anno_file, mode='test', prefix_path=prefix_path)
-#     imdb    = imagedb.load_imdb()
-#     image_reader = TestImageLoader(imdb, 1, False)
-#     print('size:%d' % image_reader.size) # still use wideface dataset
+    all_boxes, batch_idx = list(), 0
+    for databatch in image_reader:
 
-#     all_boxes, batch_idx = list(), 0
-#     for databatch in image_reader:
+        if (batch_idx + 1) % 100 == 0:
+            print("%d images done" % (batch_idx + 1))
 
-#         if (batch_idx + 1) % 50 == 0:
-#             print("%d images done" % (batch_idx + 1))
+        im = databatch
 
-#         im = databatch
+        # pnet detection = [x1, y1, x2, y2, score, reg]
+        p_boxes_align = mtcnn_detector.detect_pnet(im=im)
 
-#         # pnet detection = [x1, y1, x2, y2, score, reg]
-#         p_boxes, p_boxes_align = mtcnn_detector.detect_pnet(im=im)
+        # rnet detection
+        r_boxes_align = mtcnn_detector.detect_rnet(im=im, dets=p_boxes_align)
 
-#         # rnet detection
-#         boxes, boxes_align = mtcnn_detector.detect_rnet(im=im, dets=p_boxes_align)
-
-#         if boxes_align is None:
-#             all_boxes.append(np.array([]))
-#             batch_idx += 1
-#             continue
+        if r_boxes_align is None:
+            all_boxes.append(np.array([]))
+            batch_idx += 1
+            continue
 #         if vis:
 #             rgb_im = cv2.cvtColor(np.asarray(im), cv2.COLOR_BGR2RGB)
-#             vision.vis_two(rgb_im, boxes, boxes_align)
+#             vision.vis_two(rgb_im, boxes, r_boxes_align)
 
-#         all_boxes.append(boxes_align)
-#         batch_idx += 1
+        all_boxes.append(r_boxes_align)
+        batch_idx += 1
 
-#     save_path = './anno_store/onet'
+    save_path = os.path.join(anno_dir, 'onet')
 
-#     if not os.path.exists(save_path):
-#         os.mkdir(save_path)
+    if not os.path.exists(save_path):
+        os.mkdir(save_path)
 
-#     save_file = os.path.join(save_path, "detections_%d.pkl" % int(time.time()))
-#     with open(save_file, 'wb') as f:
-#         cPickle.dump(all_boxes, f, cPickle.HIGHEST_PROTOCOL)
+    save_file = os.path.join(save_path, "detections_%d.pkl" % int(time.time()))
+    with open(save_file, 'wb') as f:
+        cPickle.dump(all_boxes, f, cPickle.HIGHEST_PROTOCOL)
+    
+    # save_file = '/home/faceu/5keypoints/onet/detections_1571576511.pkl'
+    gen_onet_sample_data(data_dir, anno_dir, save_file)
 
-    save_file = './anno_store/onet/detections_1571044656.pkl'
-    gen_onet_sample_data(data_dir, anno_file, save_file, prefix_path)
 
+def gen_onet_sample_data(data_dir, anno_dir, det_boxs_file):
 
-def gen_onet_sample_data(data_dir, anno_file, det_boxs_file, prefix):
-
-    neg_save_dir  = os.path.join(data_dir, "trian_onet/negative")
-    pos_save_dir  = os.path.join(data_dir, "trian_onet/positive")
-    part_save_dir = os.path.join(data_dir, "trian_onet/part")
+    neg_save_dir  = os.path.join(anno_dir, "onet/negative")
+    pos_save_dir  = os.path.join(anno_dir, "onet/positive")
+    part_save_dir = os.path.join(anno_dir, "onet/part")
 
     for dir_path in [neg_save_dir, pos_save_dir, part_save_dir]:
         if not os.path.exists(dir_path):
@@ -86,7 +86,9 @@ def gen_onet_sample_data(data_dir, anno_file, det_boxs_file, prefix):
 
     # load ground truth from annotation file
     # format of each line: image/path [x1,y1,x2,y2] for each gt_box in this image
-
+    
+    anno_file = os.path.join(anno_dir, 'anno_store/wide_anno_train.txt')
+    
     with open(anno_file, 'r') as f:
         annotations = f.readlines()
 
@@ -101,20 +103,20 @@ def gen_onet_sample_data(data_dir, anno_file, det_boxs_file, prefix):
     for annotation in annotations:
 
         annotation = annotation.strip().split(' ')
-        im_idx = os.path.join(prefix,annotation[0])
+        im_idx = os.path.join('',annotation[0])
 
         boxes = list(map(float, annotation[1:]))
         boxes = np.array(boxes, dtype=np.float32).reshape(-1, 4)
         im_idx_list.append(im_idx)
         gt_boxes_list.append(boxes)
 
-    save_path = './anno_store'
+    save_path = os.path.join(anno_dir, 'anno_store/onet')
     if not os.path.exists(save_path):
         os.makedirs(save_path)
 
-    f1 = open(os.path.join(save_path, 'onet/pos_%d.txt' % image_size), 'w')
-    f2 = open(os.path.join(save_path, 'onet/neg_%d.txt' % image_size), 'w')
-    f3 = open(os.path.join(save_path, 'onet/part_%d.txt' % image_size), 'w')
+    f1 = open(os.path.join(save_path, 'pos_%d.txt' % image_size), 'w')
+    f2 = open(os.path.join(save_path, 'neg_%d.txt' % image_size), 'w')
+    f3 = open(os.path.join(save_path, 'part_%d.txt' % image_size), 'w')
 
     det_handle = open(det_boxs_file, 'rb')
 
@@ -198,4 +200,4 @@ def model_store_path():
 
 if __name__ == '__main__':
 
-    gen_onet_data(data_dir, anno_file, pnet_file, rnet_file, prefix, use_cuda)
+    gen_onet_data(data_dir, anno_dir, pnet_file, rnet_file, use_cuda)

@@ -11,8 +11,9 @@ import numpy as np
 sys.path.append(os.getcwd())
 import mtcnn.core.utils as utils
 
-root_dir  = 'home/faceu/'
+root_dir  = '/home/faceu/'
 
+from IPython import embed
 
 def gen_data(args):
 
@@ -21,13 +22,13 @@ def gen_data(args):
         folder_name = 'pnet'
     elif args.img_size == 24:
         folder_name = 'rnet'
-    elif args.img_size == '48':
+    elif args.img_size == 48:
         folder_name = 'onet'
     else:
         raise TypeError('img_size must be 12, 24 or 48')
 
     txt_save_dir = os.path.join(args.save_dir, 'anno_store/%s' % folder_name)
-    img_save_dir = os.path.join(args.data_dir, '%s/landmark' % folder_name)
+    img_save_dir = os.path.join(args.save_dir, '%s/landmark' % folder_name)
     for folder in [txt_save_dir, img_save_dir]:
         if not os.path.exists(folder):
             os.makedirs(folder)
@@ -46,7 +47,7 @@ def gen_data(args):
     f = open(save_txt_to, 'w')
     for idx, annotation in enumerate(annotations):
 
-        annotation = annotation.strip().split(' ')
+        annotation = '/'.join(annotation.strip().split('\\')).split(' ')
 
         assert len(annotation)==15, "each line should have 15 element"
 
@@ -55,6 +56,7 @@ def gen_data(args):
         landmark = np.array(list(map(float, annotation[5:])), dtype=np.float)
 
         img = cv2.imread(im_path)
+
         assert (img is not None)
 
         height, width, channel = img.shape
@@ -127,10 +129,10 @@ def gen_config():
 
     parser = argparse.ArgumentParser(description=' Generate lmk file')
 
-    parser.add_argument('--anno_file', type=str,  default=os.path.join(root_dir, 'cuhk_mm/trans_all.txt'))
+    parser.add_argument('--anno_file', type=str,  default=os.path.join(root_dir, 'cuhk_mm/anno_file.txt'))
     parser.add_argument('--data_dir',  type=str,  default=os.path.join(root_dir, 'cuhk_mm'))
     parser.add_argument('--save_dir',  type=str,  default=os.path.join(root_dir, '5keypoints'))
-    parser.add_argument('--img_size',  type=int,  default=12)    # TODO
+    parser.add_argument('--img_size',  type=int,  default=48)    # TODO
     parser.add_argument('--num_rands', type=int,  default=10)    # TODO
     parser.add_argument('--threshold', type=float,default=0.65)
 

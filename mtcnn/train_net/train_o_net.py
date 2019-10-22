@@ -10,6 +10,8 @@ from mtcnn.core.imagedb import ImageDB
 
 from IPython import embed
 
+anno_dir = '/home/faceu/5keypoints/anno_store'
+
 def train_net(args):
 
     imagedb    = ImageDB(args.anno_file)
@@ -29,14 +31,14 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train  ONet')
     
     # {landmark_48_train:311617, landmark_48_cls_train:15809}
-    parser.add_argument('--anno_file',  type=str,   default='./anno_store/onet/train_anno_48.txt')  
-    parser.add_argument('--eval_file',  type=str,   default='./anno_store/onet/eval_anno_48.txt')
-    parser.add_argument('--model_path', type=str,   default='./68_keypoints_model/onet')
-    parser.add_argument('--factors',    type=list,  default=[1, 0.5, 2.4])  # [0.8, 0.6, 1.5]
+    parser.add_argument('--anno_file',  type=str,   default=os.path.join(anno_dir, 'onet/train_anno_48.txt'))  
+    parser.add_argument('--eval_file',  type=str,   default=os.path.join(anno_dir, 'onet/eval_anno_48.txt'))
+    parser.add_argument('--model_path', type=str,   default='model/checkout/onet_r0.05_0.3_3_withflip')
+    parser.add_argument('--factors',    type=list,  default=[0.05, 0.3, 3])  
     parser.add_argument('--use_lmkinfo',type=bool,  default=True)
     parser.add_argument('--imgsize',    type=int,   default=48)
     parser.add_argument('--end_epoch',  type=int,   default=20)
-    parser.add_argument('--frequent',   type=int,   default=1000)
+    parser.add_argument('--frequent',   type=int,   default=5000)
     parser.add_argument('--lr',         type=float, default=1e-3)    # TODO
     parser.add_argument('--batch_size', type=int,   default=64)      # TODO
     parser.add_argument('--use_cuda',   type=bool,  default=True)    # TODO

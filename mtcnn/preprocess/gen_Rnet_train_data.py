@@ -21,10 +21,9 @@ from IPython import embed
 
 data_dir  = '/home/faceu' # temporary
 # anno_dir  = '/home/jovyan/gpu3-data2/lujie/data/benchmark_images/faceu/anno_store'
-anno_dir  = '../anno_store'
-pnet_file = './aku_model/pnet/pnet_epoch_20.pt'    # TODO
-prefix    = ''
-use_cuda  = False
+anno_dir  = os.path.join(data_dir, '5keypoints')
+pnet_file = './model/checkout/pnet/pnet_epoch_20.pt'    # TODO
+use_cuda  = True
 
 
 def gen_rnet_data(data_dir, anno_dir, pnet_model_file, use_cuda=True):
@@ -35,9 +34,9 @@ def gen_rnet_data(data_dir, anno_dir, pnet_model_file, use_cuda=True):
     mtcnn_detector = MtcnnDetector(pnet=pnet, min_face_size=12)
 
     # load original_anno_file, length = 12880
-    anno_file = os.path.join(anno_dir, 'local_wide_anno.txt')  # TODO :: [local_wide_anno, wide_anno_train]
-    imagedb = ImageDB(anno_file, mode='test', prefix_path='')
-    imdb = imagedb.load_imdb()
+    anno_file = os.path.join(anno_dir, 'anno_store/wide_anno_train.txt')  # TODO :: [local_wide_anno, wide_anno_train]
+    imagedb   = ImageDB(anno_file, mode='test', prefix_path='')
+    imdb      = imagedb.load_imdb()
 
     image_reader = TestImageLoader(imdb, 1, False)
     print('size:%d' %image_reader.size)
@@ -52,7 +51,7 @@ def gen_rnet_data(data_dir, anno_dir, pnet_model_file, use_cuda=True):
         im = databatch
 
         # obtain boxes and aligned boxes
-        boxes, boxes_align = mtcnn_detector.detect_pnet(im=im)  # Time costly
+        boxes_align = mtcnn_detector.detect_pnet(im=im)  # Time costly
 
         if boxes_align is None:
             all_boxes.append(np.array([]))
@@ -75,16 +74,16 @@ def gen_rnet_data(data_dir, anno_dir, pnet_model_file, use_cuda=True):
     with open(save_file, 'wb') as f:
         cPickle.dump(all_boxes, f, cPickle.HIGHEST_PROTOCOL)
 
-    # gen_rnet_sample_data(data_dir, anno_dir, save_file)
+    gen_rnet_sample_data(data_dir, anno_dir, save_file)
 
 
 def gen_rnet_sample_data(data_dir, anno_dir, det_boxs_file):
     ''' Generate the train data for RNet '''
 
 
-    part_save_dir = os.path.join(data_dir, "train_rnet/part")
-    pos_save_dir  = os.path.join(data_dir, "train_rnet/positive")
-    neg_save_dir  = os.path.join(data_dir, "train_rnet/negative")
+    part_save_dir = os.path.join(data_dir, "5keypoints/rnet/part")
+    pos_save_dir  = os.path.join(data_dir, "5keypoints/rnet/positive")
+    neg_save_dir  = os.path.join(data_dir, "5keypoints/rnet/negative")
 
     for dir_path in [neg_save_dir, pos_save_dir, part_save_dir]:
         if not os.path.exists(dir_path):
@@ -93,7 +92,7 @@ def gen_rnet_sample_data(data_dir, anno_dir, det_boxs_file):
 
     # load ground truth from annotation file
     # format of each line: image/path [x1,y1,x2,y2] for each gt_box in this image
-    anno_file = os.path.join(anno_dir, 'local_wide_anno.txt')  # TODO :: [local_wide_anno, wide_anno_train]
+    anno_file = os.path.join(anno_dir, 'anno_store/wide_anno_train.txt')  # TODO :: [local_wide_anno, wide_anno_train]
     with open(anno_file, 'r') as f:
         annotations = f.readlines()
 
@@ -113,7 +112,7 @@ def gen_rnet_sample_data(data_dir, anno_dir, det_boxs_file):
         im_idx_list.append(im_idx)
         gt_boxes_list.append(boxes)
 
-    save_path = os.path.join(anno_dir, 'rnet')
+    save_path = os.path.join(anno_dir, 'anno_store/rnet')
     if not os.path.exists(save_path):
         os.makedirs(save_path)
 
@@ -205,4 +204,4 @@ def gen_rnet_sample_data(data_dir, anno_dir, det_boxs_file):
 
 if __name__ == '__main__':
 
-    gen_rnet_data(data_dir, anno_dir, pnet_file, use_cuda, )
+    gen_rnet_data(data_dir, anno_dir, pnet_file, use_cuda)

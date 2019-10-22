@@ -109,13 +109,7 @@ class ImageDB(object):
             annotation = annotations[i].strip().split(' ')
             index = annotation[0]
             
-            im_path = self.real_image_path(index)  # BUG
-            
-#             try:
-#                 im_path = self.real_image_path(index)
-#             except:
-#                 continue
-                
+            im_path = self.real_image_path(index)  # BUG  
             imdb_ = dict()
             imdb_['image'] = im_path
 
@@ -129,11 +123,11 @@ class ImageDB(object):
                 imdb_['label']           = int(label)
                 imdb_['flipped']         = False
                 imdb_['bbox_target']     = np.zeros((4,))
-                imdb_['landmark_target'] = np.zeros((136,))  # 5-keypoints; 68-keypoints
+                imdb_['landmark_target'] = np.zeros((10,))  # 5-keypoints; 68-keypoints
                 if len(annotation[2:])==4:
                     bbox_target = annotation[2:6]
                     imdb_['bbox_target'] = np.array(bbox_target).astype(float)
-                if len(annotation[2:])==140:  # 4 + 136
+                if len(annotation[2:])==14:  # 4 + 10
                     bbox_target = annotation[2:6]
                     imdb_['bbox_target'] = np.array(bbox_target).astype(float)
                     landmark = annotation[6:]
@@ -162,17 +156,17 @@ class ImageDB(object):
             m_bbox[0], m_bbox[2] = -m_bbox[2], -m_bbox[0] # mirror-filp, but coord is kept
 
             landmark_ = imdb_['landmark_target'].copy()
-            landmark_ = landmark_.reshape((68, 2))       #  68-keypoints
-            landmark_ = np.asarray([(1 - x, y) for (x, y) in landmark_])
+            landmark_ = landmark_.reshape((5, 2))       #  68-keypoints
+            landmark_ = np.asarray([(1 - x, y) for (x, y) in landmark_])  # why ?
             
-            # do what ?
-            # landmark_[[0, 1]] = landmark_[[1, 0]]
-            # landmark_[[3, 4]] = landmark_[[4, 3]]
+            # do what ?  fuck here...
+            landmark_[[0, 1]] = landmark_[[1, 0]]
+            landmark_[[3, 4]] = landmark_[[4, 3]]
 
             item = {'image': imdb_['image'],
                      'label': imdb_['label'],
                      'bbox_target': m_bbox,
-                     'landmark_target': landmark_.reshape((136)),   #  68-keypoints
+                     'landmark_target': landmark_.reshape((10)),   #  68-keypoints
                      'flipped': True}
 
             imdb.append(item)

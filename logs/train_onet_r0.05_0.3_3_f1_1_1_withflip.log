@@ -1,0 +1,61 @@
+Flipping action will add 922719 images to imdb
+train : 1845438	eval : 395452
+/home/jovyan/gpu3-data2/lujie/mtcnn-pytorch-5keypoints/mtcnn/core/models.py:12: UserWarning: nn.init.xavier_uniform is now deprecated in favor of nn.init.xavier_uniform_.
+  nn.init.xavier_uniform(m.weight.data)
+/home/jovyan/gpu3-data2/lujie/mtcnn-pytorch-5keypoints/mtcnn/core/models.py:13: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  nn.init.constant(m.bias, 0.1)
+Epoch: 1|20, bid: 5000, acc: 0.9140, cls_loss: 0.2070, bbox_loss: 0.0144, lmk_loss: 0.0042, all_loss: 0.0273
+Epoch: 1|20, bid: 10000, acc: 0.9344, cls_loss: 0.1644, bbox_loss: 0.0133, lmk_loss: 0.0032, all_loss: 0.0217
+Epoch: 1|20, bid: 15000, acc: 0.9429, cls_loss: 0.1457, bbox_loss: 0.0127, lmk_loss: 0.0027, all_loss: 0.0193
+Epoch: 1|20, bid: 20000, acc: 0.9482, cls_loss: 0.1341, bbox_loss: 0.0124, lmk_loss: 0.0025, all_loss: 0.0178
+Epoch: 1|20, bid: 25000, acc: 0.9518, cls_loss: 0.1260, bbox_loss: 0.0121, lmk_loss: 0.0023, all_loss: 0.0167
+Eval result acc: 0.9710, cls_loss: 0.0859, bbox_loss: 0.0104, lmk_loss: 0.0013, all_loss: 0.0113
+Epoch: 2|20, bid: 5000, acc: 0.9691, cls_loss: 0.0868, bbox_loss: 0.0106, lmk_loss: 0.0013, all_loss: 0.0115
+Epoch: 2|20, bid: 10000, acc: 0.9694, cls_loss: 0.0859, bbox_loss: 0.0105, lmk_loss: 0.0013, all_loss: 0.0114
+Epoch: 2|20, bid: 15000, acc: 0.9696, cls_loss: 0.0856, bbox_loss: 0.0105, lmk_loss: 0.0013, all_loss: 0.0114
+Epoch: 2|20, bid: 20000, acc: 0.9692, cls_loss: 0.0867, bbox_loss: 0.0106, lmk_loss: 0.0013, all_loss: 0.0115
+Epoch: 2|20, bid: 25000, acc: 0.9685, cls_loss: 0.0886, bbox_loss: 0.0106, lmk_loss: 0.0014, all_loss: 0.0117
+Eval result acc: 0.9724, cls_loss: 0.0762, bbox_loss: 0.0104, lmk_loss: 0.0013, all_loss: 0.0107
+Epoch: 3|20, bid: 5000, acc: 0.9711, cls_loss: 0.0820, bbox_loss: 0.0104, lmk_loss: 0.0013, all_loss: 0.0110
+Epoch: 3|20, bid: 10000, acc: 0.9718, cls_loss: 0.0804, bbox_loss: 0.0103, lmk_loss: 0.0012, all_loss: 0.0108
+Epoch: 3|20, bid: 15000, acc: 0.9722, cls_loss: 0.0791, bbox_loss: 0.0103, lmk_loss: 0.0012, all_loss: 0.0107
+Epoch: 3|20, bid: 20000, acc: 0.9724, cls_loss: 0.0786, bbox_loss: 0.0102, lmk_loss: 0.0012, all_loss: 0.0106
+Epoch: 3|20, bid: 25000, acc: 0.9703, cls_loss: 0.0837, bbox_loss: 0.0105, lmk_loss: 0.0014, all_loss: 0.0116
+Eval result acc: 0.9728, cls_loss: 0.0789, bbox_loss: 0.0104, lmk_loss: 0.0012, all_loss: 0.0108
+Epoch: 4|20, bid: 5000, acc: 0.9722, cls_loss: 0.0786, bbox_loss: 0.0103, lmk_loss: 0.0013, all_loss: 0.0108
+Epoch: 4|20, bid: 10000, acc: 0.9729, cls_loss: 0.0777, bbox_loss: 0.0102, lmk_loss: 0.0012, all_loss: 0.0106
+Epoch: 4|20, bid: 15000, acc: 0.9704, cls_loss: 0.0838, bbox_loss: 0.0155, lmk_loss: 0.0013, all_loss: 0.0127
+Epoch: 4|20, bid: 20000, acc: 0.9705, cls_loss: 0.0836, bbox_loss: 0.0143, lmk_loss: 0.0013, all_loss: 0.0123
+Epoch: 4|20, bid: 25000, acc: 0.9693, cls_loss: 0.0856, bbox_loss: 0.0136, lmk_loss: 0.0014, all_loss: 0.0125
+Eval result acc: 0.9738, cls_loss: 0.0795, bbox_loss: 0.0102, lmk_loss: 0.0012, all_loss: 0.0107
+Epoch: 5|20, bid: 5000, acc: 0.9742, cls_loss: 0.0743, bbox_loss: 0.0102, lmk_loss: 0.0012, all_loss: 0.0102
+Epoch: 5|20, bid: 10000, acc: 0.9742, cls_loss: 0.0746, bbox_loss: 0.0101, lmk_loss: 0.0012, all_loss: 0.0102
+Epoch: 5|20, bid: 15000, acc: 0.9744, cls_loss: 0.0740, bbox_loss: 0.0101, lmk_loss: 0.0012, all_loss: 0.0102
+Epoch: 5|20, bid: 20000, acc: 0.9743, cls_loss: 0.0738, bbox_loss: 0.0101, lmk_loss: 0.0012, all_loss: 0.0102
+Epoch: 5|20, bid: 25000, acc: 0.9745, cls_loss: 0.0733, bbox_loss: 0.0100, lmk_loss: 0.0012, all_loss: 0.0101
+Eval result acc: 0.9777, cls_loss: 0.0662, bbox_loss: 0.0096, lmk_loss: 0.0012, all_loss: 0.0098
+Epoch: 6|20, bid: 5000, acc: 0.9765, cls_loss: 0.0685, bbox_loss: 0.0099, lmk_loss: 0.0011, all_loss: 0.0097
+Epoch: 6|20, bid: 10000, acc: 0.9761, cls_loss: 0.0695, bbox_loss: 0.0099, lmk_loss: 0.0011, all_loss: 0.0097
+Epoch: 6|20, bid: 15000, acc: 0.9738, cls_loss: 0.0749, bbox_loss: 0.0102, lmk_loss: 0.0012, all_loss: 0.0104
+Epoch: 6|20, bid: 20000, acc: 0.9741, cls_loss: 0.0742, bbox_loss: 0.0101, lmk_loss: 0.0012, all_loss: 0.0103
+Epoch: 6|20, bid: 25000, acc: 0.9744, cls_loss: 0.0735, bbox_loss: 0.0101, lmk_loss: 0.0012, all_loss: 0.0102
+Eval result acc: 0.9765, cls_loss: 0.0667, bbox_loss: 0.0097, lmk_loss: 0.0011, all_loss: 0.0095
+Epoch: 7|20, bid: 5000, acc: 0.9769, cls_loss: 0.0682, bbox_loss: 0.0098, lmk_loss: 0.0011, all_loss: 0.0096
+Epoch: 7|20, bid: 10000, acc: 0.9768, cls_loss: 0.0678, bbox_loss: 0.0098, lmk_loss: 0.0011, all_loss: 0.0096
+Epoch: 7|20, bid: 15000, acc: 0.9728, cls_loss: 0.0780, bbox_loss: 0.0103, lmk_loss: 0.0013, all_loss: 0.0110
+Epoch: 7|20, bid: 20000, acc: 0.9729, cls_loss: 0.0775, bbox_loss: 0.0103, lmk_loss: 0.0013, all_loss: 0.0109
+Epoch: 7|20, bid: 25000, acc: 0.9736, cls_loss: 0.0755, bbox_loss: 0.0102, lmk_loss: 0.0013, all_loss: 0.0106
+Eval result acc: 0.9723, cls_loss: 0.0821, bbox_loss: 0.0105, lmk_loss: 0.0013, all_loss: 0.0110
+Epoch: 8|20, bid: 5000, acc: 0.9719, cls_loss: 0.0808, bbox_loss: 0.0118, lmk_loss: 0.0013, all_loss: 0.0116
+Epoch: 8|20, bid: 10000, acc: 0.9741, cls_loss: 0.0750, bbox_loss: 0.0110, lmk_loss: 0.0012, all_loss: 0.0108
+Epoch: 8|20, bid: 15000, acc: 0.9746, cls_loss: 0.0736, bbox_loss: 0.0106, lmk_loss: 0.0012, all_loss: 0.0106
+Epoch: 8|20, bid: 20000, acc: 0.9746, cls_loss: 0.0734, bbox_loss: 0.0105, lmk_loss: 0.0012, all_loss: 0.0106
+Epoch: 8|20, bid: 25000, acc: 0.9694, cls_loss: 0.0864, bbox_loss: 0.0158, lmk_loss: 0.0019, all_loss: 0.0148
+Eval result acc: 0.9715, cls_loss: 0.0794, bbox_loss: 0.0108, lmk_loss: 0.0013, all_loss: 0.0111
+Epoch: 9|20, bid: 5000, acc: 0.9737, cls_loss: 0.0765, bbox_loss: 0.0104, lmk_loss: 0.0013, all_loss: 0.0108
+Epoch: 9|20, bid: 10000, acc: 0.9729, cls_loss: 0.0779, bbox_loss: 0.0404, lmk_loss: 0.0015, all_loss: 0.0204
+Epoch: 9|20, bid: 15000, acc: 0.9647, cls_loss: 0.0987, bbox_loss: 0.0317, lmk_loss: 0.0026, all_loss: 0.0223
+Epoch: 9|20, bid: 20000, acc: 0.9643, cls_loss: 0.0996, bbox_loss: 0.0269, lmk_loss: 0.0026, all_loss: 0.0208
+Epoch: 9|20, bid: 25000, acc: 0.9656, cls_loss: 0.0962, bbox_loss: 0.0237, lmk_loss: 0.0024, all_loss: 0.0192
+Eval result acc: 0.9767, cls_loss: 0.0695, bbox_loss: 0.0101, lmk_loss: 0.0014, all_loss: 0.0106
+Epoch: 10|20, bid: 5000, acc: 0.9615, cls_loss: 0.1060, bbox_loss: 0.0122, lmk_loss: 0.0026, all_loss: 0.0168

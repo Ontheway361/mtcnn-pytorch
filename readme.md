@@ -1,13 +1,10 @@
 # mtcnn-pytorch
-# Descriptions in chinese
-  https://blog.csdn.net/Sierkinhane/article/details/83308658
+  https://blog.csdn.net/On_theway10/article/details/102628169
 
 # results:
-
-![](https://github.com/Sierkinhane/mtcnn-pytorch/blob/master/results/r_1.jpg)
-![](https://github.com/Sierkinhane/mtcnn-pytorch/blob/master/results/r_2.jpg)
-![](https://github.com/Sierkinhane/mtcnn-pytorch/blob/master/results/r_3.jpg)
-![](https://github.com/Sierkinhane/mtcnn-pytorch/blob/master/results/r_4.jpg)
+![](https://github.com/Ontheway361/mtcnn-pytorch/tree/master/result/r_kobe_self.jpg)
+![](https://github.com/Ontheway361/mtcnn-pytorch/tree/master/result/r_messi_self.jpg)
+![](https://github.com/Ontheway361/mtcnn-pytorch/tree/master/result/r_two_faces_self.jpg)
 
 
 # Test an image

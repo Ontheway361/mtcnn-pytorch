@@ -4,12 +4,8 @@
 # results:
 <table style="border:0px">
    <tr>
-       a). local_pooling
-       <td><img src="result/r_kobe.jpg" width="200" height="100" frame=void rules=none></td>
-       b). global_pooling
-       <td><img src="result/r_messi.jpg" width="200" height="100" frame=void rules=none></td>
-       c). slow_pooling
-       <td><img src="result/r_two_faces.jpg" width="200" height="100" frame=void rules=none></td>
+       <td><img src="result/r_kobe.jpg" width="400" height="250" frame=void rules=none></td>
+       <td><img src="result/r_messi.jpg" width="400" height="250" frame=void rules=none></td>
 </table>
 
 

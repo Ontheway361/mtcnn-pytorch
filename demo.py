@@ -10,7 +10,7 @@ from mtcnn.core.detect import create_mtcnn_net, MtcnnDetector
 from IPython import embed
 
 if __name__ == '__main__':
-    
+
     model_info = 'self'
     imglists   = [s.split('.')[0] for s in os.listdir('imgs/')]
     # org
@@ -22,12 +22,12 @@ if __name__ == '__main__':
     pnet, rnet, onet = create_mtcnn_net(p_model_path='model/checkout/pnet.pt', \
                                         r_model_path='model/checkout/rnet.pt', \
                                         o_model_path='model/checkout/onet.pt', \
-                                        use_cuda=True)
+                                        use_cuda=False)
 
     mtcnn_detector = MtcnnDetector(pnet=pnet, rnet=rnet, onet=onet, min_face_size=24)
-    
+
     for img_name in imglists:
-        
+
         img    = cv2.imread('imgs/%s.jpg' % img_name)
         img_bg = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 

@@ -84,7 +84,6 @@ def vis_face(im_array, dets, landmarks, save_name):
     """
 
     figure = pylab.figure()
-    # plt.subplot(121)
     pylab.imshow(im_array)
 
     for i in range(dets.shape[0]):

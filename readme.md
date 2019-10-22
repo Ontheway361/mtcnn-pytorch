@@ -2,13 +2,19 @@
   https://blog.csdn.net/On_theway10/article/details/102628169
 
 # results:
-![](https://github.com/Ontheway361/mtcnn-pytorch/tree/master/result/r_kobe_self.jpg)
-![](https://github.com/Ontheway361/mtcnn-pytorch/tree/master/result/r_messi_self.jpg)
-![](https://github.com/Ontheway361/mtcnn-pytorch/tree/master/result/r_two_faces_self.jpg)
+<table style="border:0px">
+   <tr>
+       a). local_pooling
+       <td><img src="result/r_kobe.jpg" width="200" height="100" frame=void rules=none></td>
+       b). global_pooling
+       <td><img src="result/r_messi.jpg" width="200" height="100" frame=void rules=none></td>
+       c). slow_pooling
+       <td><img src="result/r_two_faces.jpg" width="200" height="100" frame=void rules=none></td>
+</table>
 
 
 # Test an image
-  * run > python mtcnn_test.py
+  * run > python demo.py
 
 # Training data prepraring
   * download [WIDER FACE](https://pan.baidu.com/s/1sJTO7TcQ2576RUqR_IIhbQ) (passcode:lsl3) face detection data then store it into ./data_set/face_detection
